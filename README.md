@@ -1,32 +1,46 @@
-# 🎮📚 Aplicação Web Gamificada – Língua Portuguesa
+# 🔧 API Backend – Aplicação Web Gamificada
 
-> **Trabalho de Conclusão de Curso (TCC)** – Sistemas de Informação
+> **TCC – Sistemas de Informação**
+> Backend desenvolvido em **Laravel**
 
 ## 📌 Sobre
 
-Aplicação web gamificada para o aprendizado de **regras da Língua Portuguesa**, utilizando desafios, pontuação e feedback imediato para aumentar o engajamento e a eficácia do aprendizado.
+Este repositório contém a **API backend** da aplicação web gamificada para o aprendizado de regras da Língua Portuguesa. A API é responsável pelo gerenciamento de usuários, desafios, pontuação, progresso e regras de negócio da aplicação.
 
-## 🎯 Objetivo
+## ⚙️ Funcionalidades da API
 
-Auxiliar o aprendizado de ortografia, gramática, leitura e interpretação por meio da **gamificação** em ambiente web.
-
-## 🧩 Funcionalidades
-
-* Desafios linguísticos
-* Pontuação e níveis
-* Progresso do usuário
-* Feedback imediato
+* Autenticação de usuários
+* Gerenciamento de desafios e atividades
+* Controle de pontuação, níveis e progresso
+* Retorno de feedback para o frontend
 
 ## 🛠️ Tecnologias
 
-* HTML, CSS, JavaScript
-* Backend e Banco de Dados *(ajustar conforme o projeto)*
+* **Laravel**
+
+## 🚀 Como Executar
+
+```bash
+# Clone o repositório
+git clone https://github.com/seu-usuario/seu-repositorio-backend.git
+
+# Instale as dependências
+composer install
+
+# Configure o ambiente
+cp .env.example .env
+php artisan key:generate
+
+# Execute as migrations
+php artisan migrate
+
+# Inicie o servidor
+php artisan serve
+```
 
 ## 👩‍💻 Autoria
 
 **Maria Iara Soares Braga**
 **Caetano Vieira Neto Segundo**
 
-## 📄 Licença
-
-Projeto acadêmico.
+## 📄 Projeto acadêmico.
