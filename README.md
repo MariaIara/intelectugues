@@ -1,6 +1,7 @@
 # 🔧 API Backend – Aplicação Web Gamificada
 
-> **TCC – Sistemas de Informação**
+> **Trabalho de Conclusão de Curso – Sistemas de Informação**
+
 > Backend desenvolvido em **Laravel**
 
 ## 📌 Sobre
