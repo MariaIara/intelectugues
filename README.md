@@ -15,10 +15,6 @@ Este repositório contém a **API backend** da aplicação web gamificada para o
 * Controle de pontuação, níveis e progresso
 * Retorno de feedback para o frontend
 
-## 🛠️ Tecnologias
-
-* **Laravel**
-
 ## 🚀 Como Executar
 
 ```bash
@@ -42,6 +38,7 @@ php artisan serve
 ## 👩‍💻 Autoria
 
 **Maria Iara Soares Braga**
+
 **Caetano Vieira Neto Segundo**
 
 ## 📄 Projeto acadêmico.
