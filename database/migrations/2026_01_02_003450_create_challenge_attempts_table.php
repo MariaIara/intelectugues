@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Challenge;
 use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -14,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('challenge_attempts', function (Blueprint $table) {
             $table->id();
-            // $table->foreignIdFor(Challenge::class);
+            $table->foreignIdFor(Challenge::class);
             $table->foreignIdFor(User::class);
             $table->date('finished_at');
         });

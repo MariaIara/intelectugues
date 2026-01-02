@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Track;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -17,7 +18,7 @@ return new class extends Migration
             $table->string('description')->nullable();
             $table->integer('score')->default(50);
             $table->integer('index');
-            // $table->foreignIdFor(Track::class);
+            $table->foreignIdFor(Track::class);
             $table->timestamps();
         });
     }

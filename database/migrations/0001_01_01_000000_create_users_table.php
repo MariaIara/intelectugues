@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Avatar;
+use App\Models\Level;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -20,8 +22,8 @@ return new class extends Migration
             $table->integer('sequence')->default(0);
             $table->integer('general_score')->default(0);
             $table->integer('weekly_score')->default(0);
-            // $table->foreignIdFor(Avatar::class)->default(1);
-            // $table->foreignIdFor(Level::class)->nullable();
+            $table->foreignIdFor(Avatar::class)->default(1);
+            $table->foreignIdFor(Level::class)->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
