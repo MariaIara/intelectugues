@@ -12,4 +12,10 @@ class Word extends Model
         'meaning',
         'synonymous'
     ];
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'user_word')
+            ->withPivot('created_at', 'updated_at');
+    }
 }

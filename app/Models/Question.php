@@ -10,4 +10,14 @@ class Question extends Model
         'statement',
         'challenge_id'
     ];
+
+    public function challenge()
+    {
+        return $this->belongsTo(Challenge::class);
+    }
+
+    public function alternatives()
+    {
+        return $this->hasMany(Alternative::class);
+    }
 }
