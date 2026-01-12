@@ -12,4 +12,14 @@ class Track extends Model
         'image',
         'index'
     ];
+
+    public function challenges()
+    {
+        return $this->hasMany(Challenge::class);
+    }
+
+    public function questions()
+    {
+        return $this->hasManyThrough(Question::class, Challenge::class);
+    }
 }

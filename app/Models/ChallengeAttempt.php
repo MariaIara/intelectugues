@@ -19,4 +19,14 @@ class ChallengeAttempt extends Model
             'finished_at' => 'datetime'
         ];
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function challenge()
+    {
+        return $this->belongsTo(Challenge::class);
+    }
 }

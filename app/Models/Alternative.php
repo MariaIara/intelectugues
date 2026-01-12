@@ -11,4 +11,9 @@ class Alternative extends Model
         'is_correct',
         'question_id'
     ];
+
+    public function question()
+    {
+        return $this->belongsTo(Question::class);
+    }
 }

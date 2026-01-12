@@ -11,4 +11,10 @@ class Achievement extends Model
         'description',
         'image'
     ];
+
+    public function users()
+    {
+        return $this->belongsToMany(Achievement::class, 'user_achievement')
+            ->withPivot('created_at', 'updated_at');
+    }
 }

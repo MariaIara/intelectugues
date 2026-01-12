@@ -22,9 +22,11 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'gender',
         'sequence',
-        'score'
+        'general_score',
+        'weekly_score',
+        'avatar_id',
+        'level_id',
     ];
 
     /**
@@ -48,5 +50,32 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function avatar()
+    {
+        return $this->belongsTo(Avatar::class);
+    }
+
+    public function level()
+    {
+        return $this->belongsTo(Level::class);
+    }
+
+    public function challengeAttempts()
+    {
+        return $this->hasMany(ChallengeAttempt::class);
+    }
+
+    public function achievements()
+    {
+        return $this->belongsToMany(Achievement::class, 'user_achievement')
+            ->withPivot('created_at', 'updated_at');
+    }
+
+    public function words()
+    {
+        return $this->belongsToMany(Word::class, 'user_word')
+            ->withPivot('created_at', 'updated_at');
     }
 }

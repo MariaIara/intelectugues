@@ -14,4 +14,19 @@ class Challenge extends Model
         'track_id',
         'score'
     ];
+
+    public function track()
+    {
+        return $this->belongsTo(Track::class);
+    }
+
+    public function questions()
+    {
+        return $this->hasMany(Question::class);
+    }
+
+    public function challengeAttempts()
+    {
+        return $this->hasMany(ChallengeAttempt::class);
+    }
 }

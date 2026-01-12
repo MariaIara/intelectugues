@@ -11,4 +11,9 @@ class Level extends Model
         'image',
         'needed_score'
     ];
+
+    public function users()
+    {
+        return $this->hasMany(User::class);
+    }
 }
