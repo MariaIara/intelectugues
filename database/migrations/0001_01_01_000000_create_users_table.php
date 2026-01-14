@@ -22,8 +22,8 @@ return new class extends Migration
             $table->integer('sequence')->default(0);
             $table->integer('general_score')->default(0);
             $table->integer('weekly_score')->default(0);
-            $table->foreignIdFor(Avatar::class)->default(1);
-            $table->foreignIdFor(Level::class)->nullable();
+            $table->foreignIdFor(Avatar::class)->nullable();
+            $table->foreignIdFor(Level::class);
             $table->rememberToken();
             $table->timestamps();
         });

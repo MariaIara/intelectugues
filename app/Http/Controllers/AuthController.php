@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterRequest;
+use App\Models\Avatar;
+use App\Models\Level;
 use App\Models\User;
+use App\Services\UserService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
@@ -13,12 +16,7 @@ class AuthController extends Controller
 {
     public function register(RegisterRequest $request)
     {
-        $validated = $request->validated();
-
-        $user = User::create([
-            ...$validated,
-            'password' => Hash::make($validated['password'])
-        ]);
+        $user = app(UserService::class)->create($request->validated());
 
         return response()->json([
             'user' => $user,
