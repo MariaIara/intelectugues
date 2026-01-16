@@ -13,6 +13,10 @@ class Word extends Model
         'synonymous'
     ];
 
+    protected $casts = [
+        'synonymous' => 'array',
+    ];
+
     public function users()
     {
         return $this->belongsToMany(User::class, 'user_word')
