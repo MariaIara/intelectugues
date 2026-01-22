@@ -17,4 +17,13 @@ class UserController extends Controller
             'data' => $user
         ]);
     }
+
+    public function favoriteWords(Request $request)
+    {
+        $words = $request->user()->words()->get();
+
+        return response()->json([
+            'data' => $words
+        ]);
+    }
 }

@@ -30,14 +30,14 @@ class WordsController extends Controller
 
     public function favorite(Request $request)
     {
-        if(!$word = Word::find($request->id)){
-            abort(404, 'Word not found');
-        }
+        $word = Word::findOrFail($request->id);
 
-        $word->users()->attach(Auth::user()->id);
+        $toggle_fav = $word->users()->toggle(Auth::user()->id);
+
+        $favorited = empty($toggle_fav['detached']);
 
         return response()->json([
-            'message' => 'Word favorited successfully.'
+            'message' => $favorited ? 'Word favorited successfully.' : 'Word unfavorited successfully.'
         ]);
     }
 
