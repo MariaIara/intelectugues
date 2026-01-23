@@ -17,6 +17,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
 
     Route::get('/words', [WordsController::class, 'index']);
+    Route::get('/words/daily', [WordsController::class, 'dailyWord']);
     Route::get('/words/{id}', [WordsController::class, 'info']);
     Route::post('/words', [WordsController::class, 'create']); // admin
     Route::post('/words/{id}/favorite', [WordsController::class, 'favorite']);
