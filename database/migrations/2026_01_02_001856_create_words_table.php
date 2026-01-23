@@ -17,6 +17,9 @@ return new class extends Migration
             $table->string('category');
             $table->string('meaning');
             $table->json('synonymous')->nullable();
+            $table->string('api_name')->nullable();
+            $table->string('api_id')->nullable();
+            $table->date('shorted_at')->nullable();
             $table->timestamps();
         });
     }

@@ -10,7 +10,20 @@ class Word extends Model
         'word',
         'category',
         'meaning',
-        'synonymous'
+        'synonymous',
+        'api_name',
+        'api_id',
+        'shorted_at',
+    ];
+
+    /**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var list<string>
+     */
+    protected $hidden = [
+        'api_name',
+        'api_id',
     ];
 
     protected $casts = [

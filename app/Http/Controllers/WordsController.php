@@ -2,13 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Adapters\internalDictionary;
 use App\Http\Requests\WordsCreateRequest;
+use App\Interfaces\DictionaryInterface;
 use App\Models\Word;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class WordsController extends Controller
 {
+    protected DictionaryInterface $api;
+
+    public function __construct()
+    {
+        $this->api = new internalDictionary();
+    }
+
     public function index()
     {
         return response()->json(['data' => Word::paginate(10)]);
@@ -17,6 +26,15 @@ class WordsController extends Controller
     public function info(Request $request)
     {
         return response()->json(['data' => Word::find($request->id)]);
+    }
+
+    public function dailyWord()
+    {
+        $word = $this->api->getDailyWord();
+
+        return response()->json([
+            'data' => $word
+        ]);
     }
 
     public function create(WordsCreateRequest $request)
