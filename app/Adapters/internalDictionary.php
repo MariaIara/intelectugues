@@ -25,9 +25,7 @@ class internalDictionary implements DictionaryInterface
             $word = Word::inRandomOrder()->first();
         }
 
-        Word::update([
-            'shorted_at' => $today
-        ]);
+        $word->update(['shorted_at' => $today]);
 
         return $word;
     }
