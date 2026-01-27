@@ -9,7 +9,8 @@ class Level extends Model
     protected $fillable = [
         'name',
         'image',
-        'needed_score'
+        'needed_score',
+        'next_level',
     ];
 
     public function users()

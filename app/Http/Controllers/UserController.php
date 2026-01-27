@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\Level;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -12,6 +12,8 @@ class UserController extends Controller
         $user = $request
             ->user()
             ->load('avatar', 'level');
+
+        $user->level->next_level = Level::where('name', $user->level->next_level)->first();
 
         return response()->json([
             'data' => $user

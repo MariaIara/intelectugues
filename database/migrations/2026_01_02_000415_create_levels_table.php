@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('image');
             $table->integer('needed_score');
+            $table->string('next_level')->nullable();
             $table->timestamps();
         });
     }
