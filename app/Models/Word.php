@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Word extends Model
 {
@@ -14,6 +15,10 @@ class Word extends Model
         'api_name',
         'api_id',
         'shorted_at',
+    ];
+
+    protected $appends = [
+        'is_favorited'
     ];
 
     /**
@@ -34,5 +39,12 @@ class Word extends Model
     {
         return $this->belongsToMany(User::class, 'user_word')
             ->withPivot('created_at', 'updated_at');
+    }
+
+    public function getIsFavoritedAttribute()
+    {
+        return $this->users()
+            ->where('user_id', Auth::user()->id)
+            ->exists();
     }
 }
